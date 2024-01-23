@@ -12,7 +12,7 @@ var items = require('./routes/items');
 var app = express();
 var log = logger(app);
 
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors({ origin: 'https://rando-store.vercel.app/' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
