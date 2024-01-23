@@ -5,12 +5,14 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('./lib/logger');
+var cors = require('cors'); 
 
 var items = require('./routes/items');
 
 var app = express();
 var log = logger(app);
 
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
